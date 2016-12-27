@@ -1,0 +1,11 @@
+<div class="panel-group" id="comment-<%=comment.id%>">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <%= link_to 'Destroy Comment', post_comment_path(comment.post, comment), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+      <%= comment.commenter %>  
+    </div>
+    <div class="panel-body">
+      <%= comment.body %>
+    </div>
+  </div>
+</div>

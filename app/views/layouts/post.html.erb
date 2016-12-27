@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'posts', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'posts', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render 'shared/navigationbar' %>
+	<div id="content" class="container">
+		<%= yield %>	
+	</div>
+</body>
+</html>

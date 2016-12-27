@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+
+<h4><strong><u>Name:</u></strong></h4>
+<p>
+<%= @post.name %> 
+</p>
+
+<h4><strong><u>Content:</u></strong></h4>
+<p>
+<%= @post.content %> 
+</p>
+
+<hr>
+
+
+<h4>Comments:</h4>
+
+<div class="container" id="comments">
+  <% @post.comments.each do |comment| %>
+      <%= render partial: 'comment', locals: { comment: comment }  %>
+  <% end %>
+</div>
+
+<hr>
+
+<h4><strong>Add a comment:</strong></h4>
+<%= form_for([@post, @post.comments.build], remote: true) do |f| %>
+  <p><i>
+    <%= f.label :commenter, class: "form-signin" %><br>
+    <%= f.text_field :commenter, class: "form-control" %>
+  </i></p>
+  <p><i>
+    <%= f.label :body , class: "form-signin"%><br>
+    <%= f.text_area :body , class: "form-control"%>
+  </i> </p>
+  <p>
+    <%= f.submit(class: "btn btn-lg btn-primary btn-block") %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

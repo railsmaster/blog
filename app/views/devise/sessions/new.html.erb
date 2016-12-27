@@ -1,0 +1,48 @@
+<div class="parallax">
+
+  <br>
+  <br>
+  <br>
+
+  <center>
+    <h2> Log in  </h2>
+  </center>
+
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" }) do |f| %>
+    <%= f.email_field :email, autocomplete: "on", class: "form-control", placeholder: "Email Address", autofocus: true %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+<% end %>
+
+    <div class="actions">
+      <%= f.submit("Log in", class: "btn btn-lg btn-primary btn-block") %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+  </div>
+
+  <br>
+
+  <div class="col-sm-12">
+
+  <p class="lead">
+    Unleash your writing potential now with Writer’s Digest 
+    <strong>writing articles</strong>.
+      Here, you can learn everything you need to know about virtually any writing topic and genre. Whether it’s 
+      <a href="http://www.writersdigest.com/writing-articles/by-writing-genre/literary-fiction-by-writing-genre.aspx">fiction writing</a>,
+      <a href="http://www.writersdigest.com/writing-articles/by-writing-goal/write-an-article.aspx">how to write an article</a>,
+      <a href="http://www.writersdigest.com/writing-articles/by-writing-goal/get-published-sell-my-work.aspx">getting published</a>, 
+      <a href="http://www.writersdigest.com/writing-articles/by-writing-goal/marketing-your-work.aspx">promoting your work</a>
+
+      and much, much more. Learn from published authors and industry experts alike how to take your initial ideas and turn them into a completed story that is creative and print-worthy – from the Writer’s Digest writing articles.
+  </p>
+
+</div>
